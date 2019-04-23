@@ -1,0 +1,57 @@
+﻿@model web.Models.JobOffers
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>JobOffers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProposedDeliveryPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProposedDeliveryPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProposedPickupDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProposedPickupDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApproxDeliveryDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApproxDeliveryDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobOfferConfirmed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobOfferConfirmed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DriverId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DriverId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Job.AdditionalInfo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="JobOfferId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

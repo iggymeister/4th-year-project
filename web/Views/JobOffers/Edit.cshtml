@@ -1,0 +1,59 @@
+﻿@model web.Models.JobOffers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>JobOffers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="JobOfferId" />
+            <div class="form-group">
+                <label asp-for="JobId" class="control-label"></label>
+                <select asp-for="JobId" class="form-control" asp-items="ViewBag.JobId"></select>
+                <span asp-validation-for="JobId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverId" class="control-label"></label>
+                <select asp-for="DriverId" class="form-control" asp-items="ViewBag.DriverId"></select>
+                <span asp-validation-for="DriverId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProposedDeliveryPrice" class="control-label"></label>
+                <input asp-for="ProposedDeliveryPrice" class="form-control" />
+                <span asp-validation-for="ProposedDeliveryPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProposedPickupDate" class="control-label"></label>
+                <input asp-for="ProposedPickupDate" class="form-control" />
+                <span asp-validation-for="ProposedPickupDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApproxDeliveryDate" class="control-label"></label>
+                <input asp-for="ApproxDeliveryDate" class="form-control" />
+                <span asp-validation-for="ApproxDeliveryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobOfferConfirmed" class="control-label"></label>
+                <input asp-for="JobOfferConfirmed" class="form-control" />
+                <span asp-validation-for="JobOfferConfirmed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

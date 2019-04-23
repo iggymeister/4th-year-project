@@ -1,0 +1,127 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+#home-div *{
+    text-align:center;
+}
+
+#home-div {
+    margin: 80px 0 50px;
+}
+
+.home-title{
+    margin:50px 0 50px;
+    color: #ffffff;
+}
+
+.home-intro{
+    margin:30px 0;
+    text-align:justify;
+}
+
+.home-subtitle{
+    margin:50px 0 30px;
+}
+
+#user-loginbox{
+    border-right:1px white solid;
+}
+
+#driver-loginbox {
+    border-left: 1px white solid;
+}
+
+.login-title{
+    margin:0 0 30px;
+    color:#ffffff;
+}
+
+.login-txt{
+    margin:10px 0;
+}
+
+.login-btn, .register-btn {
+    -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e6b34e), color-stop(1, #d1711e));
+    background: -moz-linear-gradient(top, #e6b34e 5%, #d1711e 100%);
+    background: -webkit-linear-gradient(top, #e6b34e 5%, #d1711e 100%);
+    background: -o-linear-gradient(top, #e6b34e 5%, #d1711e 100%);
+    background: -ms-linear-gradient(top, #e6b34e 5%, #d1711e 100%);
+    background: linear-gradient(to bottom, #e6b34e 5%, #d1711e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6b34e', endColorstr='#d1711e',GradientType=0);
+    background-color: #e6b34e;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    display: inline-block;
+    cursor: pointer;
+    color: #d0d0db;
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 7px 35px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #76cc54;
+    margin: 10px 0;
+}
+
+    .login-btn:hover, .register-btn:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d1711e), color-stop(1, #e6b34e));
+        background: -moz-linear-gradient(top, #d1711e 5%, #e6b34e 100%);
+        background: -webkit-linear-gradient(top, #d1711e 5%, #e6b34e 100%);
+        background: -o-linear-gradient(top, #d1711e 5%, #e6b34e 100%);
+        background: -ms-linear-gradient(top, #d1711e 5%, #e6b34e 100%);
+        background: linear-gradient(to bottom, #d1711e 5%, #e6b34e 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1711e', endColorstr='#e6b34e',GradientType=0);
+        background-color: #d1711e;
+        text-decoration: none;
+    }
+
+.login-btn:active, .register-btn:active {
+    position: relative;
+    top: 1px;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    min-height: 1100px;
+    background-color: #cccccc;
+    background-image: linear-gradient(#9AE99F, #50AE58);
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+    body {
+        min-height: 0px;
+    }    
+}

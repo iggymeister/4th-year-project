@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" id="home-div">
+    <div class="col-md-12">
+        <hr>
+        <h1 class="home-title">Deliver your package to family & friends for a reasonable price!</h1>
+        <p class="home-intro">
+            Welcome to my package delivery system! If you have a package you want delivered, be it localy, nationaly or globaly, I am pleased to tell you that you are in the right place!
+            You can post a delivery job and see how much the drivers around the world would charge you to deliver your package.
+        </p>
+        <p class="home-intro" style="margin-bottom:60px;">
+            If you are not looking to get a package delivered, but are driving from country to country on a regular basis and looking for some extra income, this website is also for you!
+            You can check out posted delivery jobs and submit an offer to deliver it if the job hasn't been taken yet.
+        </p>
+        <hr>
+        <h3 class="home-subtitle">Now choose your path:</h3>
+    </div>
+    <div class="col-md-6" id="user-loginbox">
+        <h2 class="login-title">I need a package delivered</h2>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <p class="login-txt">Don't have an account yet?</p>
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </div>
+    <div class="col-md-6" id="driver-loginbox">
+        <h2 class="login-title">I would like to deliver a package</h2>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <p class="login-txt">Don't have an account yet?</p>
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </div>
+    <!--<partial name="~/Areas/Identity/Pages/Account/Login.cshtml" />-->
+</div>

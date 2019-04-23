@@ -1,0 +1,81 @@
+﻿@model IEnumerable<web.Models.JobOffers>
+
+@{
+    ViewData["Title"] = "Job Offers";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by job ID: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Job Offer ID
+            </th>
+            <th>
+                Job ID
+            </th>
+            <th>
+                Driver ID
+            </th>
+            <th>
+                Proposed Delivery Price
+            </th>
+            <th>
+                Proposed Pickup Date
+            </th>
+            <th>
+                Approximate Delivery Date
+            </th>
+            <th>
+                Job Offer Confirmed?
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobOfferId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProposedDeliveryPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProposedPickupDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApproxDeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobOfferConfirmed)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.JobOfferId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobOfferId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

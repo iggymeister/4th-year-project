@@ -1,0 +1,106 @@
+﻿@model IEnumerable<web.Models.Jobs>
+
+@{
+    ViewData["Title"] = "Jobs";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by pick up or delivery area: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Job ID
+            </th>
+            <th>
+                Creator ID
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PackageSizeSortParm"]">Package Size in Kilograms</a>
+            </th>
+            <th>
+                Package Size in Dimensions
+            </th>
+            <th>
+                Package Pick Up Area
+            </th>
+            <th>
+                Package Delivery Area
+            </th>
+            <th>
+                Additional Information
+            </th>
+            <th>
+                Is job confirmed?
+            </th>
+            <th>
+                Driver Username
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                Delivery Completed On
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageSizeInWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageSizeInDimensions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickUpArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverUsername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JobId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
